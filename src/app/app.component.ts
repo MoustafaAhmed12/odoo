@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AuthService } from './Services/auth.service';
 @Component({
@@ -14,7 +14,6 @@ import { AuthService } from './Services/auth.service';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    RouterLink,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://sssaaa.odoo.com",
+    "target": "https://api-test3.odoo.com",
     "secure": false,
     "changeOrigin": true,
     "pathRewrite": {
