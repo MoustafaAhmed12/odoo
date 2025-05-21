@@ -1,0 +1,46 @@
+@if (isLoading) {
+<div class="min-h-screen flex justify-center items-center">
+  <mat-spinner diameter="50"></mat-spinner>
+</div>
+}
+
+<div class="flex justify-between max-w-7xl mx-auto items-center p-4">
+  <h2 class="text-xl font-bold !mb-0">قائمة المشاريع</h2>
+  <button mat-flat-button color="primary" (click)="openDialog()">
+    <mat-icon style="color: #fff">add</mat-icon>
+    مشروع جديد
+  </button>
+</div>
+
+<div
+  class="grid grid-cols-1 max-w-7xl mx-auto sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4"
+>
+  @for (project of projects; track project.id) {
+  <mat-card
+    class="rounded-2xl shadow-md border border-gray-200 transform transition duration-200 hover:scale-[1.02] hover:shadow-lg cursor-pointer"
+  >
+    <mat-card-header>
+      <mat-card-title class="text-xl font-bold text-primary">
+        {{ project.name }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p
+        [innerHTML]="project.description"
+        class="text-sm !ps-1.5 !mt-1 text-gray-600"
+      ></p>
+      <p class="text-base !ps-1.5 text-[#00bcff] font-bold mt-2">
+        عدد المهام: {{ project.task_count ?? project.tasks?.length ?? 0 }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="flex justify-end gap-2 mt-4">
+      <button mat-stroked-button color="primary" (click)="openDialog(project)">
+        تعديل
+      </button>
+      <button mat-flat-button color="warn" (click)="deleteProject(project.id)">
+        حذف
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  }
+</div>

@@ -1,0 +1,19 @@
+.container {
+  padding: 20px;
+}
+
+.add-project {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-column-actions {
+  width: 120px;
+  text-align: center;
+}

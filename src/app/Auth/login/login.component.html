@@ -1,0 +1,83 @@
+<!-- src/app/Auth/login/login.component.html -->
+<div class="login-container" dir="rtl">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>
+        <div class="flex items-center gap-2">
+          <mat-icon color="primary">lock</mat-icon>
+          <span>تسجيل الدخول</span>
+        </div>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form
+        class="login-form"
+        #loginForm="ngForm"
+        (ngSubmit)="onSubmit()"
+        autocomplete="off"
+      >
+        <!-- Database Name -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>قاعدة البيانات</mat-label>
+          <input
+            matInput
+            name="db"
+            [(ngModel)]="db"
+            required
+            placeholder="مثال: mycompany-123456"
+          />
+          <mat-icon matSuffix>dns</mat-icon>
+        </mat-form-field>
+
+        <!-- Username -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>اسم المستخدم (البريد الإلكتروني)</mat-label>
+          <input
+            matInput
+            name="username"
+            [(ngModel)]="username"
+            required
+            placeholder="example@email.com"
+          />
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <!-- Password -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>كلمة المرور</mat-label>
+          <input
+            matInput
+            name="password"
+            [(ngModel)]="password"
+            required
+            type="password"
+          />
+          <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>
+
+        <!-- Error message -->
+        <div
+          class="error-message"
+          *ngIf="errorMessage"
+          style="color: red; margin-top: 10px"
+        >
+          <mat-icon>error</mat-icon>
+          {{ errorMessage }}
+        </div>
+
+        <!-- Submit button -->
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="login-button full-width"
+          [disabled]="!loginForm.form.valid"
+        >
+          <mat-icon>login</mat-icon>
+          دخول
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,125 @@
+/* src/app/Auth/login/login.component.css */
+.login-container {
+  height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-card mat-card-header {
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.login-card mat-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  color: #333;
+}
+
+.login-icon {
+  color: #3f51b5;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+mat-form-field {
+  margin-bottom: 8px;
+}
+
+mat-icon[matSuffix] {
+  color: #666;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f44336;
+  background-color: #ffebee;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+.error-message mat-icon {
+  font-size: 20px;
+}
+
+.login-button {
+  margin-top: 16px;
+  padding: 8px 24px;
+  font-size: 16px;
+  height: 48px;
+}
+
+.login-button mat-icon {
+  margin-left: 8px;
+}
+
+/* تحسينات للأجهزة المحمولة */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 16px;
+  }
+
+  .login-card mat-card-title {
+    font-size: 20px;
+  }
+
+  .login-button {
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+/* تأثيرات حركية */
+.login-card {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* تحسين مظهر الحقول */
+::ng-deep .mat-form-field-outline {
+  background-color: white;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #e0e0e0;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline {
+  color: #3f51b5;
+}
