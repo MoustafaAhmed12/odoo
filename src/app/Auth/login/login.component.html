@@ -1,6 +1,6 @@
 <!-- src/app/Auth/login/login.component.html -->
-<div class="login-container" dir="rtl">
-  <mat-card class="login-card">
+<div class="login-container !px-2" dir="rtl">
+  <mat-card class="login-card !px-4 md:!px-6">
     <mat-card-header>
       <mat-card-title>
         <div class="flex items-center gap-2">
@@ -10,7 +10,7 @@
       </mat-card-title>
     </mat-card-header>
 
-    <mat-card-content>
+    <mat-card-content class="!px-0">
       <form
         class="login-form"
         #loginForm="ngForm"
@@ -19,7 +19,7 @@
       >
         <!-- Database Name -->
         <mat-form-field appearance="outline" class="full-width">
-          <mat-label>قاعدة البيانات</mat-label>
+          <mat-label class="text-sm md:text-base">قاعدة البيانات</mat-label>
           <input
             matInput
             name="db"
@@ -32,7 +32,9 @@
 
         <!-- Username -->
         <mat-form-field appearance="outline" class="full-width">
-          <mat-label>اسم المستخدم (البريد الإلكتروني)</mat-label>
+          <mat-label class="text-sm md:text-base"
+            >اسم المستخدم (البريد الإلكتروني)</mat-label
+          >
           <input
             matInput
             name="username"
@@ -45,7 +47,7 @@
 
         <!-- Password -->
         <mat-form-field appearance="outline" class="full-width">
-          <mat-label>كلمة المرور</mat-label>
+          <mat-label class="text-sm md:text-base">كلمة المرور</mat-label>
           <input
             matInput
             name="password"
